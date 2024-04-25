@@ -4,12 +4,12 @@ on: push
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  # pages: write
+  # id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+# concurrency:
+#   group: "pages"
+#   cancel-in-progress: false
 
 jobs:
   build:
@@ -62,7 +62,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          path: ./out
+          folder: out
 
   # deploy:
   #   environment:
