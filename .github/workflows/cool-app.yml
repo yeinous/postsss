@@ -68,11 +68,11 @@ jobs:
       #   with:
       #     branch: gh-pages
       #     path: ./out
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: out
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4
+      #   with:
+      #     branch: gh-pages
+      #     folder: out
 
   # deploy:
   #   environment:
