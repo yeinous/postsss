@@ -1,6 +1,11 @@
 import Link from "next/link";
 
 export default async function PostsList() {
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(1);
+    }, 2000)
+  );
   const response = await fetch(`https://dummyjson.com/posts?limit=10`, {
     next: {
       revalidate: 3600,
