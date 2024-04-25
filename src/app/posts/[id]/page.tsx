@@ -6,6 +6,15 @@ type PostPageProps = {
   };
 };
 
+export async function generateStaticParams() {
+  const response = await fetch("https://dummyjson.com/posts");
+  const data = await response.json();
+
+  return data.posts.map((post: { id: number }) => ({
+    id: `${post.id}`,
+  }));
+}
+
 export default async function PostPage({ params }: PostPageProps) {
   const response = await fetch(`https://dummyjson.com/posts/${params.id}`);
   const post = await response.json();
