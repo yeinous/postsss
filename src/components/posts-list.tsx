@@ -4,12 +4,10 @@ export default async function PostsList() {
   await new Promise((resolve) =>
     setTimeout(() => {
       resolve(1);
-    }, 2000)
+    }, 1000)
   );
   const response = await fetch(`https://dummyjson.com/posts?limit=10`, {
-    next: {
-      revalidate: 3600,
-    },
+    cache: "force-cache",
   });
   const data = await response.json();
   return (

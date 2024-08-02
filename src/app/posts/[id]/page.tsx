@@ -16,7 +16,9 @@ export async function generateStaticParams() {
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const response = await fetch(`https://dummyjson.com/posts/${params.id}`);
+  const response = await fetch(`https://dummyjson.com/posts/${params.id}`, {
+    cache: "force-cache",
+  });
   const post = await response.json();
 
   if (!post.title) {
