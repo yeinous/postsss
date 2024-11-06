@@ -1,4 +1,4 @@
-name: 部署nextjs项目
+name: CI
 
 on: push
 
